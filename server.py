@@ -68,11 +68,14 @@ def purchasePlaces():
         club['points'] = int(club['points']) - placesRequired
         flash('Great-booking complete!')
 
-    return render_template('welcome.html', club=club,
+    return render_template('welcome.html', clubs=clubs,
                            competitions=competitions)
 
 
 # TODO: Add route for points display
+@app.route('/displayPoints')
+def displayPoints():
+    return render_template('dashboard.html', clubs=clubs)
 
 
 @app.route('/logout')
