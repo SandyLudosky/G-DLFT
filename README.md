@@ -1,11 +1,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-# Mini-Projet Calculatrice
+# Projet : "Améliorez un projet existant en Python"
+![alt text](img/logo-gudlft.png)
 
-Ce projet a été implémenté dans le but de s'entrainer au test unitaire à l'aide Pytest et UnitTest. Le code source
-contient un mini-projet calculatrice qui permet d'effectuer 4 opérations différentes (addition, soustraction,
-multiplication et division). Vous pourrez ainsi développer l'ensemble des scénarios nécessaires afin de tester
-l'ensemble du code source. À noter que des propositions de corrections sont mises à disposition dans différentes branches
-du répertoire.
 
 ## Pré-requis
 
@@ -50,14 +46,31 @@ flask run
 ```
 
 
-## Corrections
-1. Proposition de correction pour les tests unitaires avec UnitTest :
-```
-
-4. Executez les tests unitairs:
+## Tests et Corrections
+1. Executez les tests unitairs:
 ```
 git checkout QA
 pytest
 ```
+
+2. Corrigez les erreurs et les bugs
+```
+les branches de test et de correction sont disponibles
+```
+  - master
+  - QA
+  - dashboard
+  - past_competition
+  - point_updates
+  - points_allowed
+  - valid_email
+
+```
+
+3. Couverture les tests unitaires
+
+![alt text](img/couverture-test.png)
+
+
 
 
