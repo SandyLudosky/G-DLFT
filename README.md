@@ -1,4 +1,4 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[\[!\[forthebadge\](https://forthebadge.com/images/badges/made-with-python.svg)\](https://forthebadge.com) \[!\[forthebadge\](https://forthebadge.com/images/badges/built-with-love.svg)\](https://forthebadge.com)
 # Mini-Projet Calculatrice
 
 Ce projet a été implémenté dans le but de s'entrainer au test unitaire à l'aide Pytest et UnitTest. Le code source
@@ -9,8 +9,8 @@ du répertoire.
 
 ## Pré-requis
 
-* Installer Python 3 : [Téléchargement Python 3](https://www.python.org/downloads/)
-* Installer git : [Téléchargement Git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
+* Installer Python 3 : \[Téléchargement Python 3\](https://www.python.org/downloads/)
+* Installer git : \[Téléchargement Git\](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
 
 ## Installation
 
@@ -61,3 +61,4 @@ pytest
 
 
 
+](img)
