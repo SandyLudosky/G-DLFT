@@ -20,7 +20,10 @@ git clone https://github.com/OpenClassrooms-Student-Center/4425126-testing-pytho
 cd 4425126-testing-python
 ```
 ### 2. Mettre en place un environnement virtuel :
-* Créer l'environnement virtuel: `python -m venv venv`
+* Créer l'environnement virtuel:
+`python -m venv venv`
+`pip3 install virtualenv`
+
 * Activer l'environnement virtuel :
     * Windows : `venv\Scripts\activate.bat`
     * Unix/MacOS : `source venv/bin/activate`
@@ -32,30 +35,28 @@ pip install -r requirements.txt
 ```
 
 ## Démarrage
-* Lancer le script à l'aide de la commande suivante : `python main.py`
+* Lancer le projet Flask:
+
+Windows/Linux
+```
+$env:FLASK_APP = "server.py"
+flask run
+```
+
+Mac
+```
+export FLASK_APP=server.py
+flask run
+```
+
 
 ## Corrections
 1. Proposition de correction pour les tests unitaires avec UnitTest :
 ```
-git checkout unittest-test
-python -m unittest discover tests/
-```
 
-2. Proposition de correction pour les tests unitaires avec Pytest :
+4. Executez les tests unitairs:
 ```
-git checkout pytest-test
-pytest
-```
-
-3. Proposition de correction pour les mocks avec Pytest:
-```
-git checkout mock-test
-pytest
-```
-
-4. Proposition de correction pour les tests paramétriques Pytest :
-```
-git checkout parametrize-test
+git checkout QA
 pytest
 ```
 

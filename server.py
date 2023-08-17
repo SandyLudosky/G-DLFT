@@ -1,8 +1,6 @@
 import json
 from flask import Flask, render_template, request, \
     redirect, flash, url_for
-import pdb
-import logging
 
 
 def loadClubs():
@@ -23,19 +21,34 @@ app.secret_key = 'something_special'
 competitions = loadCompetitions()
 clubs = loadClubs()
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/showSummary', methods=['POST'])
 def showSummary():
-    club = [club for club in clubs if club['email'] == request.form['email']]
-    if club:
-        return render_template('welcome.html', club=club[0],
-                               competitions=competitions)
-    else:
-        flash("No account related to this email.")
-        return render_template('index.html', error="No account related to this email.")
+
+        club = [club for club in clubs if club['email'] ==
+                request.form['email']]
+
+        if club:
+            return render_template('welcome.html', club=club[0],
+                                   competitions=competitions)
+        elif request.form['email'] == '':
+            flash("Please enter your email.")
+            return render_template('index.html'), 401
+        else:
+            flash("No account related to this email.")
+            return render_template('index.html'), 401
+
+    # except IndexError:
+    #     if request.form['email'] == '':
+    #         flash("Please enter your email.", 'error')
+    #     else:
+    #         flash("No account related to this email.", 'error')
+    #     return render_template('index.html'), 401
 
 
 @app.route('/book/<competition>/<club>')
