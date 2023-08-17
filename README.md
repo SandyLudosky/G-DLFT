@@ -1,16 +1,11 @@
-[\[!\[forthebadge\](https://forthebadge.com/images/badges/made-with-python.svg)\](https://forthebadge.com) \[!\[forthebadge\](https://forthebadge.com/images/badges/built-with-love.svg)\](https://forthebadge.com)
-# Mini-Projet Calculatrice
+# Projet : "Améliorez un projet existant en Python"
+![bannière logo gudlft](img/logo-gudlft.png)
 
-Ce projet a été implémenté dans le but de s'entrainer au test unitaire à l'aide Pytest et UnitTest. Le code source
-contient un mini-projet calculatrice qui permet d'effectuer 4 opérations différentes (addition, soustraction,
-multiplication et division). Vous pourrez ainsi développer l'ensemble des scénarios nécessaires afin de tester
-l'ensemble du code source. À noter que des propositions de corrections sont mises à disposition dans différentes branches
-du répertoire.
 
 ## Pré-requis
 
-* Installer Python 3 : \[Téléchargement Python 3\](https://www.python.org/downloads/)
-* Installer git : \[Téléchargement Git\](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
+* Installer Python 3 : [Téléchargement Python 3](https://www.python.org/downloads/)
+* Installer git : [Téléchargement Git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
 
 ## Installation
 
@@ -20,7 +15,10 @@ git clone https://github.com/OpenClassrooms-Student-Center/4425126-testing-pytho
 cd 4425126-testing-python
 ```
 ### 2. Mettre en place un environnement virtuel :
-* Créer l'environnement virtuel: `python -m venv venv`
+* Créer l'environnement virtuel:
+`python -m venv venv`
+`pip3 install virtualenv`
+
 * Activer l'environnement virtuel :
     * Windows : `venv\Scripts\activate.bat`
     * Unix/MacOS : `source venv/bin/activate`
@@ -32,33 +30,45 @@ pip install -r requirements.txt
 ```
 
 ## Démarrage
-* Lancer le script à l'aide de la commande suivante : `python main.py`
+* Lancer le projet Flask:
 
-## Corrections
-1. Proposition de correction pour les tests unitaires avec UnitTest :
+Windows/Linux
 ```
-git checkout unittest-test
-python -m unittest discover tests/
+$env:FLASK_APP = "server.py"
+flask run
 ```
 
-2. Proposition de correction pour les tests unitaires avec Pytest :
+Mac
 ```
-git checkout pytest-test
+export FLASK_APP=server.py
+flask run
+```
+
+
+## Tests et Corrections
+1. Executez les tests unitairs:
+```
+git checkout QA
 pytest
 ```
 
-3. Proposition de correction pour les mocks avec Pytest:
+2. Corrigez les erreurs et les bugs
+
+les branches de test et de correction sont disponibles
 ```
-git checkout mock-test
-pytest
+  - master
+  - QA
+  - dashboard
+  - past_competition
+  - point_updates
+  - points_allowed
+  - valid_email
 ```
 
-4. Proposition de correction pour les tests paramétriques Pytest :
-```
-git checkout parametrize-test
-pytest
-```
+3. Couverture les tests unitaires
+
+![couverture de tests](img/couverture-test.png)
 
 
 
-](img)
+
