@@ -20,9 +20,9 @@
     <ul>
         {% for club in clubs %}
         <li>
-            {{club['name']}}<br />
-            Email: {{club['email']}}</br>
-            Number of Points: {{club['points']}}
+            <span>{{club['name']}}</span><br />
+            <span></span>Email: {{club['email']}} </span></br>
+            <span>Number of Points: {{club['points']}} </span>
         </li>
         <hr />
         {% endfor %}

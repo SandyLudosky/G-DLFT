@@ -83,6 +83,9 @@ def purchase_places():
     competition = [c for c in competitions if c['name'] ==
                    request.form['competition']][0]
     club = [c for c in clubs if c['name'] == request.form['club']][0]
+    # request.form returns an array ??
+
+    print(request.form['places'])
 
     try:
         places_required = int(request.form['places'])
@@ -90,7 +93,7 @@ def purchase_places():
         if places_required > int(competition['numberOfPlaces']):
             flash('Not enough places available.', 'error'), 400
 
-        elif places_required * 3 > int(club['points']):
+        elif places_required > int(club['points']):
             flash("You don't have enough points.", 'error')
 
         elif places_required > 12:
@@ -99,7 +102,7 @@ def purchase_places():
             try:
                 competition['numberOfPlaces'] = \
                 int(competition['numberOfPlaces']) - places_required
-                club['points'] = int(club['points']) - (places_required * 3)
+                club['points'] = int(club['points']) - places_required
                 flash('Great-booking complete!', 'success')
 
                 return render_template(
@@ -123,7 +126,8 @@ def purchase_places():
 # TODO: Add route for points display
 @app.route('/displayPoints')
 def displayPoints():
-    return render_template('dashboard.html', clubs=clubs)
+    club_list = sorted(clubs, key=lambda club: club['name'])
+    return render_template('dashboard.html', clubs=club_list)
 
 
 @app.route('/logout')
