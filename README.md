@@ -65,9 +65,20 @@ les branches de test et de correction sont disponibles
   - valid_email
 ```
 
-3. Couverture les tests unitaires
+3. Couverture les tests
+
+### tests unitaires
 
 ![couverture de tests](img/couverture-test.png)
+
+### tests de performance
+to start the performance test, navigate to :
+
+`cd tests/performance_tests`
+
+run the following command:
+
+`locust --host http://127.0.0.1:5000/`
 
 
 
