@@ -39,10 +39,10 @@ def showSummary():
                                competitions=competitions)
     elif request.form['email'] == '':
         flash("Please enter your email.")
-        return render_template('index.html'), 401
+        return render_template('index.html', error= "Please enter your email"), 401
     else:
         flash("No account related to this email.")
-        return render_template('index.html'), 401
+        return render_template('index.html', error= "No account related to this email"), 401
 
     # except IndexError:
     #     if request.form['email'] == '':
@@ -65,7 +65,8 @@ def book(competition, club):
 
         else:
             return render_template('booking.html', club=club,
-                                   competition=competition)
+                                   competition=competition,
+                                   error="This competition is over.")
 
     except IndexError:
         flash("Something went wrong-please try again", 'error')
@@ -75,6 +76,7 @@ def book(competition, club):
         'welcome.html',
         club=club,
         competitions=competitions,
+        error="This competition is over."
     ), status_code
 
 
@@ -84,20 +86,21 @@ def purchase_places():
                    request.form['competition']][0]
     club = [c for c in clubs if c['name'] == request.form['club']][0]
     # request.form returns an array ??
-
-    print(request.form['places'])
-
+    error = ""
     try:
         places_required = int(request.form['places'])
 
         if places_required > int(competition['numberOfPlaces']):
-            flash('Not enough places available.', 'error'), 400
+            error = 'Not enough places available.'
+            flash(error, 'error'), 400
 
         elif places_required > int(club['points']):
-            flash("You don't have enough points.", 'error')
+            error = "You don't have enough points."
+            flash(error, 'error')
 
         elif places_required > 12:
-            flash("You cannot book more than 12 places in a competition.", 'error'), 400
+            error = "You cannot book more than 12 places in a competition."
+            flash(error, 'error'), 400
         else:
             try:
                 competition['numberOfPlaces'] = \
@@ -108,16 +111,19 @@ def purchase_places():
                 return render_template(
                     'welcome.html',
                     club=club,
-                    competitions=competitions
+                    competitions=competitions,
+                    error=error
                 )
 
             except ValueError as error_message:
                 flash(error_message, 'error')
 
     except ValueError:
-        flash('Please enter a number between 0 and 12.', 'error')
+        error = "Please enter a number between 0 and 12."
+        flash("Please enter a number between 0 and 12.", 'error')
 
-    return render_template('booking.html', club=club, competition=competition), 400
+    return render_template('booking.html', club=club, competition=competition,
+                           error=error), 400
 
 
 
