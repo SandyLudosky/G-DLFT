@@ -65,11 +65,16 @@ les branches de test et de correction sont disponibles
   - points_allowed
   - valid_email
 
-```
 
-3. Couverture les tests unitaires
+3. Couverture des tests unitaires
 
 ![alt text](img/couverture-test.png)
+
+4. Couverture des tests de performance
+disponible à 0.0.0.0.8089
+
+![Tests de performance](img/test-performance-terminal.png)
+![Tests de performance](img/test-performance.png)
 
 
 
