@@ -78,8 +78,16 @@ to start the performance test, navigate to :
 
 run the following command:
 
+`locust`
+
 `locust --host http://127.0.0.1:5000/`
 
+3. Couverture des tests unitaires
 
+![alt text](img/couverture-test.png)
 
+4. Couverture des tests de performance
+disponible à 0.0.0.0.8089
 
+![Tests de performance](img/test-performance-terminal.png)
+![Tests de performance](img/test-performance.png)
